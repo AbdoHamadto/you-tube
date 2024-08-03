@@ -63,7 +63,7 @@ const Watch = async ({ params }) => {
               <span className="mr-4">{video[0].viewCount}</span>
               <span>{video[0].publishedText}</span>
             </div>
-            <div className="mt-4">" This is a description "</div>
+            <div className="mt-4">| This is a description |</div>
           </div>
           <p className="my-4 text-2xl font-bold text-white">{comment.length} Comments</p>
           {comment.map((item, index) => {

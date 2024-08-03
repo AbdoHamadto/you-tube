@@ -70,6 +70,7 @@ const SideBar = () => {
     <div onClick={sidbar} className="w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center">
       <Image 
         className="cursor-pointer"
+        alt="menu"
         src={menu}
         width={30}
         height={30}
@@ -80,6 +81,7 @@ const SideBar = () => {
         <div onClick={sidbar} className="w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center">
           <Image 
             className="cursor-pointer"
+            alt="menu"
             src={menu}
             width={30}
             height={30}
@@ -88,6 +90,7 @@ const SideBar = () => {
         <Link href='/'>
           <div className="relative flex justify-center items-center h-full">
             <Image 
+              alt="logo"
               src={logo}
               width={30}
               height={30}
@@ -98,10 +101,10 @@ const SideBar = () => {
         </Link>
       </div>
         <div className="px-6 py-4">
-          {arrSid.map((item) => 
+          {arrSid.map((item, index) => 
           <>
             {item.title &&
-              <Link href={item.addres === false ? item.link : ''}>
+              <Link href={item.addres === false ? item.link : ''} key={index}>
                   <div onClick={sidbar} className={` ${item.addres ? 'cursor-auto' : 'cursor-pointer'} hover:bg-gray-600 p-2 rounded-lg flex items-center  group`}>
                     {item.addres === false && <Image src={item.image} className="h-5 w-5"/> }
                     <div className={`${item.addres ? 'font-bold text-lg' : 'ml-4'}`}>{item.title && item.title}</div>

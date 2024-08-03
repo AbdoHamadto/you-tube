@@ -14,6 +14,7 @@ const NavBar = () => {
         <Link href='/'>
         <div className="relative flex justify-center items-center">
           <Image 
+            alt="logo"
             src={logo}
             width={30}
             height={30}
@@ -28,6 +29,7 @@ const NavBar = () => {
           <input type="text" className="w-5/6 bg-transparent rounded-l-full outline-none py-2 px-5 focus:border focus:border-blue-600" placeholder="Search..."/>
           <div className="relative w-1/6 flex justify-center items-center bg-lightgray rounded-r-full cursor-pointer group">
             <Image 
+              alt="search"
               src={search} 
               width={30}
               height={30}
@@ -37,6 +39,7 @@ const NavBar = () => {
         </div>
         <div className="relative w-10 h-10 mr-4 rounded-full hover:bg-opacity-75 hover:bg-gray-700 cursor-pointer bg-lightgray flex justify-center items-center ml-4 group">
           <Image 
+            alt="mic"
             src={mic}
             width={30}
             height={20}

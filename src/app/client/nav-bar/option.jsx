@@ -39,16 +39,17 @@ const Option = ( ) => {
     {/* Creat */}
     <div onClick={creat} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group">
       <Image 
+        alt="video"
         src={video}
         width={30}
         height={30}
       />
       <p className="absolute hidden text-xs bg-gray-600 bg-opacity-90 p-2 rounded-lg -bottom-14 group-hover:block">Creat</p>
       {stateCreat && <div className="absolute top-10 -right-2  w-72 bg-lightgray p-2 font-bold rounded-lg">
-        {arrCreat.map((item) => {
+        {arrCreat.map((item, index) => {
           return(
-            <div className="flex p-2 cursor-pointer hover:bg-gray-600">
-              <Image src={item.image} width={20} height={20} />
+            <div className="flex p-2 cursor-pointer hover:bg-gray-600" key={index}>
+              <Image alt="image" src={item.image} width={20} height={20} />
               <div className="ml-2">{item.title}</div>
             </div>
           )
@@ -58,6 +59,7 @@ const Option = ( ) => {
     {/* notification */}
     <div onClick={notification} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group">
       <Image 
+        alt="not"
         src={not}
         width={30}
         height={30}
@@ -66,9 +68,9 @@ const Option = ( ) => {
       <span className="animate-ping absolute h-3 w-3 rounded-full bg-red-400 opacity-75 top-2 right-2"></span>
       <span className="absolute rounded-full h-3 w-3 bg-red-600 top-2 right-2"></span>
       {stateNotification && <div className="absolute top-10 -right-6  w-72 bg-lightgray p-2 font-bold rounded-lg">
-        {arrNotification.map((item) => {
+        {arrNotification.map((item, index) => {
           return(
-            <div className="p-2 cursor-pointer hover:bg-gray-600">{item}</div>
+            <div className="p-2 cursor-pointer hover:bg-gray-600" key={index}>{item}</div>
           )
         })}
       </div> }
@@ -82,9 +84,9 @@ const Option = ( ) => {
         height={30}
       />
       {stateLogin && <div className="absolute top-10 right-0  w-72 bg-lightgray p-2 font-bold rounded-lg">
-        {arrLogin.map((item) => {
+        {arrLogin.map((item, index) => {
           return(
-            <div className="p-2 cursor-pointer hover:bg-gray-600">{item}</div>
+            <div className="p-2 cursor-pointer hover:bg-gray-600" key={index}>{item}</div>
           )
         })}
       </div> }

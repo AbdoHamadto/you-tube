@@ -47,6 +47,7 @@ export default async function Home() {
       <Link href='/'>
         <div className="flex flex-col items-center p-2 hover:bg-gray-600 rounded-lg cursor-pointer">
           <Image 
+            alt="home"
             src={home}
             width={30}
             height={30}
@@ -56,6 +57,7 @@ export default async function Home() {
       </Link>
       <div className="my-2 flex flex-col items-center p-2 hover:bg-gray-600 rounded-lg cursor-pointer">
         <Image 
+          alt="shorts"
           src={shorts}
           width={30}
           height={30}
@@ -64,6 +66,7 @@ export default async function Home() {
       </div>
       <div className="my-2 flex flex-col items-center p-2 hover:bg-gray-600 rounded-lg cursor-pointer">
         <Image 
+          alt="subscripe"
           src={subscripe}
           width={30}
           height={30}
@@ -71,7 +74,8 @@ export default async function Home() {
         <p className="mt-2 text-[10px]">Subscriptions</p>
       </div>
       <div className="flex flex-col items-center p-2 hover:bg-gray-600 rounded-lg cursor-pointer">
-        <Image 
+        <Image
+          alt="you"
           src={you}
           width={30}
           height={30}

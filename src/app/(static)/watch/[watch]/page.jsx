@@ -36,7 +36,7 @@ const Watch = async ({ params }) => {
     <>
       <div className="w-11/12 mx-auto my-10 flex">
         <div className="mr-6">
-          <Image className="rounded-xl" src={video[0].videoThumbnails[0].url} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
+          <Image className="rounded-xl" alt="video" src={video[0].videoThumbnails[0].url} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
           <p className="text-white my-2 font-bold text-2xl">{video[0].title}</p>
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -49,13 +49,11 @@ const Watch = async ({ params }) => {
             </div>
             <div>
               <div className="flex">
-                {option.map((item) => {return(
-                  <>
-                  <div className="relative group">
+                {option.map((item, index) => {return(
+                  <div className="relative group" key={index}>
                     <p className="rounded-full w-10 h-10 ml-2 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center">{<Image src={item.iamge} width={20} height={20}/>}</p>
                     <p className="absolute p-2 bg-lightgray rounded-lg -bottom-12 -right-1 text-white font-bold hidden group-hover:block">{item.title}</p>
                   </div>
-                  </>
                 )})}
               </div>
             </div>
@@ -68,9 +66,9 @@ const Watch = async ({ params }) => {
             <div className="mt-4">" This is a description "</div>
           </div>
           <p className="my-4 text-2xl font-bold text-white">{comment.length} Comments</p>
-          {comment.map((item) => {
+          {comment.map((item, index) => {
             return(
-              <div className="flex justify-between mb-5">
+              <div className="flex justify-between mb-5" key={index}>
                 <div className="flex">
                   <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
                   <div className="text-white ml-4">
@@ -84,7 +82,7 @@ const Watch = async ({ params }) => {
                   </div>
                 </div>
                 <div className="cursor-pointer my-auto h-9 w-9 rounded-full flex justify-center items-center hover:bg-gray-500 hover:rotate-90 transition">
-                  <Image src={dotsy} width={26} height={26} />
+                  <Image alt="setting" src={dotsy} width={26} height={26} />
                 </div>
               </div>
             )

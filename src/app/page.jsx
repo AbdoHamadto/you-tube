@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 my-10">
+    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 my-10 sm:grid-cols-1 sm:gap-0 sm:mx-auto sm:my-5">
       {videos.map((item) => {
         return(
           <Link key={item.authorId} href={`/watch/watch=${item.authorId}`}>
@@ -43,7 +43,7 @@ export default async function Home() {
         )
       })}
     </div>
-    <div className="absolute left-2 top-16 text-xs text-white -z-10">
+    <div className="absolute left-2 top-16 text-xs text-white -z-10 sm:hidden">
       <Link href='/'>
         <div className="flex flex-col items-center p-2 hover:bg-gray-600 rounded-lg cursor-pointer">
           <Image 

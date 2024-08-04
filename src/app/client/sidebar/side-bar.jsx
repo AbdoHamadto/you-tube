@@ -67,7 +67,7 @@ const SideBar = () => {
   }
   return(
     <>
-    <div onClick={sidbar} className="w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center">
+    <div onClick={sidbar} className="w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center sm:hidden">
       <Image 
         className="cursor-pointer"
         alt="menu"

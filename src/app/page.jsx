@@ -85,25 +85,25 @@ export default async function Home() {
         <p className="mt-2">You</p>
       </div>
     </div>
-    <div className="hidden sm:sticky bottom-0 border-t border-gray-600 sm:flex justify-around items-center text-white bg-darkgray p-2 text-sm">
+    <div className="hidden sm:sticky bottom-0 border-t border-gray-600 sm:flex justify-around items-center text-white bg-darkgray p-2 text-xs ">
       <div className="flex flex-col items-center cursor-pointer p-1">
-        <Image src={home} width={30} height={30} />
-        <p>Home</p>
+        <Image src={home} width={20} height={20} />
+        <p className="mt-1">Home</p>
       </div>
       <div className="flex flex-col items-center cursor-pointer p-1">
-        <Image src={shorts} width={30} height={30} />
-        <p>Shorts</p>
+        <Image src={shorts} width={20} height={20} />
+        <p className="mt-1">Shorts</p>
       </div>
       <div className="cursor-pointer p-1">
         <Image src={plus} width={30} height={30} />
       </div>
       <div className="flex flex-col items-center cursor-pointer p-1">
-        <Image src={subscripe} width={30} height={30} />
-        <p>Subscriptions</p>
+        <Image src={subscripe} width={20} height={20} />
+        <p className="mt-1">Subscriptions</p>
       </div>
       <div className="flex flex-col items-center cursor-pointer p-1">
-        <Image src={logIn} width={30} height={30} />
-        <p>You</p>
+        <Image src={logIn} width={20} height={20} />
+        <p className="mt-1">You</p>
       </div>
     </div>
     </>

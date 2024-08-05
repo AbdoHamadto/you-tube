@@ -34,21 +34,23 @@ const Watch = async ({ params }) => {
 
   return(
     <>
-      <div className="w-11/12 mx-auto my-10 flex">
-        <div className="mr-6">
-          <Image className="rounded-xl" alt="video" src={video[0].videoThumbnails[0].url} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
-          <p className="text-white my-2 font-bold text-2xl">{video[0].title}</p>
-          <div className="flex justify-between">
-            <div className="flex items-center">
-              <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
-              <div className="mx-3">
-                <p className="text-white font-bold">{video[0].author}</p>
-                <p className="text-gray-500 text-sm">1k subscribers</p>
+      <div className="w-11/12 mx-auto my-10 flex sm:block sm:mx-0 sm:my-5 sm:w-full">
+        <div className="mr-6 sm:mr-0">
+          <Image className="rounded-xl sm:rounded-none" alt="video" src={video[0].videoThumbnails[0].url} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
+          <p className="text-white my-2 font-bold text-2xl sm:text-lg sm:mx-2">{video[0].title}</p>
+          <div className="flex justify-between sm:block sm:mx-2">
+            <div className="flex items-center justify-between">
+              <div className="flex sm:mb-2">
+                <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
+                <div className="mx-3">
+                  <p className="text-white font-bold">{video[0].author}</p>
+                  <p className="text-gray-500 text-sm">1k <span className="sm:hidden">subscribers</span> </p>
+                </div>
               </div>
               <p className="bg-white p-2 text-sm ml-2 cursor-pointer font-bold rounded-full hover:bg-opacity-90">subscribe</p>
             </div>
             <div>
-              <div className="flex">
+              <div className="flex justify-center">
                 {option.map((item, index) => {return(
                   <div className="relative group" key={index}>
                     <p className="rounded-full w-10 h-10 ml-2 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center">{<Image src={item.iamge} width={20} height={20}/>}</p>
@@ -58,51 +60,54 @@ const Watch = async ({ params }) => {
               </div>
             </div>
           </div>
-          <div className="bg-lightgray p-2 rounded-lg text-white mt-4">
+          <div className="bg-lightgray p-2 rounded-lg text-white mt-4 sm:mx-2">
             <div className="text-sm">
-              <span className="mr-4">{video[0].viewCount}</span>
+              <span className="mr-4">{video[0].viewCount} views</span>
               <span>{video[0].publishedText}</span>
             </div>
             <div className="mt-4">| This is a description |</div>
           </div>
-          <p className="my-4 text-2xl font-bold text-white">{comment.length} Comments</p>
-          {comment.map((item, index) => {
-            return(
-              <div className="flex justify-between mb-5" key={index}>
-                <div className="flex">
-                  <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
-                  <div className="text-white ml-4">
-                    <p><span className="text-sm">{item.name}</span> <span className="ml-2 text-gray-500">{item.time} ago</span></p>
-                    <p>{item.title}</p>
-                    <div className="flex mt-[2px] items-center">
-                      <div className="rounded-full w-8 h-8 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center"><Image src={like} width={18} height={18} /></div>
-                      <div className="rounded-full w-8 h-8 ml-2 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center"><Image src={dislike} width={18} height={18} /></div>
-                      <p className="p-2 hover:bg-gray-700 ml-2 rounded-full cursor-pointer text-sm">Replay</p>
+          <p className="my-4 text-2xl font-bold text-white sm:text-lg sm:mx-2">{comment.length} Comments</p>
+          <div className="sm:mx-2 sm:overflow-auto sm:h-40 sm:mb-5 ">
+            {comment.map((item, index) => {
+              return(
+                <div className="flex justify-between mb-5" key={index}>
+                  <div className="flex">
+                    <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
+                    <div className="text-white ml-4">
+                      <p><span className="text-sm">{item.name}</span> <span className="ml-2 text-gray-500">{item.time} ago</span></p>
+                      <p>{item.title}</p>
+                      <div className="flex mt-[2px] items-center">
+                        <div className="rounded-full w-8 h-8 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center"><Image src={like} width={18} height={18} /></div>
+                        <div className="rounded-full w-8 h-8 ml-2 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center"><Image src={dislike} width={18} height={18} /></div>
+                        <p className="p-2 hover:bg-gray-700 ml-2 rounded-full cursor-pointer text-sm">Replay</p>
+                      </div>
                     </div>
                   </div>
+                  <div className="cursor-pointer my-auto h-9 w-9 rounded-full flex justify-center items-center hover:bg-gray-500 hover:rotate-90 transition">
+                    <Image alt="setting" src={dotsy} width={26} height={26} />
+                  </div>
                 </div>
-                <div className="cursor-pointer my-auto h-9 w-9 rounded-full flex justify-center items-center hover:bg-gray-500 hover:rotate-90 transition">
-                  <Image alt="setting" src={dotsy} width={26} height={26} />
-                </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
         <div>
           {data.map((item) => {
             return(
               <Link key={item.authorId} href={`/watch/watch=${item.authorId}`}>
-                <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500 flex">
-                  <Image alt="img-video" src={item.videoThumbnails[5].url} width={item.videoThumbnails[5].width} height={item.videoThumbnails[5].height} className="rounded-lg" />
-                  <div className="flex justify-between text-sm mt-2">
+                <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500 flex sm:p-0 sm:block">
+                  <Image alt="img-video" src={item.videoThumbnails[3].url} width={item.videoThumbnails[5].width} height={item.videoThumbnails[5].height} className="rounded-lg sm:rounded-none sm:w-full" />
+                  <div className="flex justify-between text-sm mt-2 sm:mx-2 sm:mb-6">
                     <div className="flex">
+                      <Image src={channel}  className="hidden sm:block w-10 h-10 rounded-full"/>
                       <div className="ml-2 mr-2">
                         <p className="text-white w-56 truncate">{item.title}</p>
                         <div className="group">
                           <p className="text-gray-500 hover:text-white">{item.author}</p> 
                         </div>
                         <p className="text-gray-500 hover:text-white"><span>{item.viewCount} <span className="mx-4">|</span> {item.publishedText}</span></p>
-                        <p className="text-gray-500 hover:text-white">17:22 Timing Video</p>
+                        <p className="text-gray-500 hover:text-white sm:hidden">17:22 Timing Video</p>
                       </div>
                     </div>
                     <Image alt="dots" src={dotsy} className="h-8 hover:transition hover:rotate-90 my-auto"/>

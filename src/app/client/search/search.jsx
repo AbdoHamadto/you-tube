@@ -26,7 +26,7 @@ const Search = () => {
       <div className="flex w-4/5 rounded-full border border-gray-600">
         <input 
           type="text" 
-          className="w-5/6 bg-transparent rounded-l-full outline-none py-2 px-5 focus:border focus:border-blue-600 sm:py-1 sm:px-2" 
+          className="w-5/6 bg-transparent rounded-l-full outline-none py-2 px-5 focus:border focus:border-blue-600 sm:py-1 sm:px-2 sm:w-full" 
           placeholder="Search..." 
           onChange={(e) => setWord(e.target.value)}
           onKeyDown={handleKeyDown}

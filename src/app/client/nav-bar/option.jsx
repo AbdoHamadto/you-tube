@@ -66,7 +66,7 @@ const Option = ( ) => {
       <p className="absolute hidden text-xs bg-gray-600 bg-opacity-90 p-2 rounded-lg -bottom-14 group-hover:block">notification</p>
       <span className="animate-ping absolute h-2 w-2 rounded-full bg-red-400 opacity-75 top-2 right-2"></span>
       <span className="absolute rounded-full h-2 w-2 bg-red-600 top-2 right-2"></span>
-      {stateNotification && <div className="absolute top-10 -right-6  w-72 bg-lightgray p-2 font-bold rounded-lg">
+      {stateNotification && <div className="absolute top-10 -right-6  w-72 bg-lightgray p-2 font-bold rounded-lg sm:w-56 sm:right-0">
         {arrNotification.map((item, index) => {
           return(
             <div className="p-2 cursor-pointer hover:bg-gray-600" key={index}>{item}</div>

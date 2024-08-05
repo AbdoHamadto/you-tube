@@ -9,15 +9,12 @@ export default async function Home() {
 
   return (
     <>
-    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 mt-10">
+    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 mt-10 sm:grid-cols-1 sm:gap-0 sm:mx-0 sm:my-5 sm:w-full">
       {videos.map((item) => {
         return(
-          <div key={item.authorId} className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500">
-            <div className="relative">
-              <p className="absolute text-white font-bold bg-darkgray bg-opacity-70 p-1 rounded-lg  top-48 cursor-auto  left-64">17:22</p>
-            </div>
+          <div key={item.authorId} className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500 sm:p-0">
             <Image alt="img-video" src={item.videoThumbnails[2].url} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg" />
-            <div className="flex justify-between text-sm mt-2">
+            <div className="flex justify-between text-sm mt-2 sm:w-11/12 sm:mx-auto sm:mb-8">
               <div className="flex">
                 <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
                 <div className="ml-4">

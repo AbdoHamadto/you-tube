@@ -37,7 +37,7 @@ const Option = ( ) => {
   return(
     <>
     {/* Creat */}
-    <div onClick={creat} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group">
+    <div onClick={creat} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group sm:hidden">
       <Image 
         alt="video"
         src={video}
@@ -57,16 +57,15 @@ const Option = ( ) => {
       </div> }
     </div>
     {/* notification */}
-    <div onClick={notification} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group">
+    <div onClick={notification} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer group sm:mr-0">
       <Image 
         alt="not"
         src={not}
-        width={30}
-        height={30}
+        className="w-5 h-5"
       />
       <p className="absolute hidden text-xs bg-gray-600 bg-opacity-90 p-2 rounded-lg -bottom-14 group-hover:block">notification</p>
-      <span className="animate-ping absolute h-3 w-3 rounded-full bg-red-400 opacity-75 top-2 right-2"></span>
-      <span className="absolute rounded-full h-3 w-3 bg-red-600 top-2 right-2"></span>
+      <span className="animate-ping absolute h-2 w-2 rounded-full bg-red-400 opacity-75 top-2 right-2"></span>
+      <span className="absolute rounded-full h-2 w-2 bg-red-600 top-2 right-2"></span>
       {stateNotification && <div className="absolute top-10 -right-6  w-72 bg-lightgray p-2 font-bold rounded-lg">
         {arrNotification.map((item, index) => {
           return(
@@ -76,7 +75,7 @@ const Option = ( ) => {
       </div> }
     </div>
     {/* LogIn */}
-    <div onClick={log} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer">
+    <div onClick={log} className="relative w-10 h-10 mr-4 rounded-full hover:bg-lightgray flex justify-center items-center cursor-pointer sm:hidden">
       <Image 
         src={logIn}
         alt="log in"

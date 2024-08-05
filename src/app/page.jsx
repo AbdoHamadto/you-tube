@@ -14,13 +14,13 @@ export default async function Home() {
 
   return (
     <>
-    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 my-10 sm:grid-cols-1 sm:gap-0 sm:mx-auto sm:my-5">
+    <div className="grid grid-cols-5 gap-2 w-11/12 ml-28 my-10 sm:grid-cols-1 sm:gap-0 sm:mx-0 sm:my-5 sm:w-full">
       {videos.map((item) => {
         return(
           <Link key={item.authorId} href={`/watch/watch=${item.authorId}`}>
-            <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-red-500">
-              <Image alt="img-video" src={item.videoThumbnails[2].url} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg" />
-              <div className="flex justify-between text-sm mt-2">
+            <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-red-500 sm:p-0">
+              <Image alt="img-video" src={item.videoThumbnails[2].url} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg sm:rounded-none" />
+              <div className="flex justify-between text-sm mt-2 sm:w-11/12 sm:mx-auto sm:mb-8">
                 <div className="flex">
                   <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>
                   <div className="ml-4">
@@ -33,7 +33,7 @@ export default async function Home() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-500 hover:text-white"><span>{item.viewCount} <span className="mx-4">|</span> {item.publishedText}</span></p>
+                    <p className="text-gray-500 hover:text-white"><span>{item.viewCount} views <span className="mx-2">|</span> {item.publishedText}</span></p>
                   </div>
                 </div>
                 <Image alt="dots" src={dots} className="h-8 hover:transition hover:rotate-90"/>

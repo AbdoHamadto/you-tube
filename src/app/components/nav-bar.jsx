@@ -7,7 +7,7 @@ import Search from "../client/search/search";
 
 const NavBar = () => {
   return(
-    <div className="text-white flex justify-between items-center h-14 px-8 sticky top-0 bg-darkgray sm:px-2 sm:h-12">
+    <div className="text-white flex justify-between items-center h-14 px-8 sticky top-0 bg-darkgray sm:px-2 sm:h-12 sm:absolute">
       <div className="flex justify-center items-center">
         <SideBar />
         <Link href='/'>

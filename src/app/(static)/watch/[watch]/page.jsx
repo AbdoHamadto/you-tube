@@ -54,7 +54,7 @@ const Watch = async ({ params }) => {
                 {option.map((item, index) => {return(
                   <div className="relative group" key={index}>
                     <p className="rounded-full w-10 h-10 ml-2 bg-gray-700 hover:bg-gray-500 cursor-pointer flex items-center justify-center">{<Image src={item.iamge} width={20} height={20}/>}</p>
-                    <p className="absolute p-2 bg-lightgray rounded-lg -bottom-12 -right-1 text-white font-bold hidden group-hover:block">{item.title}</p>
+                    <p className="absolute p-2 bg-lightgray rounded-lg -bottom-12 -right-1 text-white font-bold hidden group-hover:block sm:hidden">{item.title}</p>
                   </div>
                 )})}
               </div>

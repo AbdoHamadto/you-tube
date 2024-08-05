@@ -85,7 +85,7 @@ export default async function Home() {
         <p className="mt-2">You</p>
       </div>
     </div>
-    <div className="sticky bottom-0 flex justify-around items-center text-white bg-darkgray p-2 text-sm">
+    <div className="hidden sm:sticky bottom-0 border-t border-gray-600 sm:flex justify-around items-center text-white bg-darkgray p-2 text-sm">
       <div className="flex flex-col items-center cursor-pointer p-1">
         <Image src={home} width={30} height={30} />
         <p>Home</p>

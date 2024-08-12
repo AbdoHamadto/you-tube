@@ -8,6 +8,7 @@ import subscripe from "./image/footage.png"
 import you from "./image/video.png"
 import plus from "./image/plus.png"
 import logIn from "./image/login.png"
+import imageVideo from "./image/image-video.jpg"
 
 export default async function Home() {
 
@@ -21,7 +22,7 @@ export default async function Home() {
         return(
           <Link key={item.authorId} href={`/watch/watch=${item.authorId}`}>
             <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-red-500 sm:p-0">
-              <Image alt="img-video" src={item.videoThumbnails[2].url} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg sm:rounded-none" />
+              <Image alt="img-video" src={imageVideo} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg sm:rounded-none" />
               <div className="flex justify-between text-sm mt-2 sm:w-11/12 sm:mx-auto sm:mb-8">
                 <div className="flex">
                   <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>

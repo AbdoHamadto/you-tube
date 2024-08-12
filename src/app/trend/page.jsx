@@ -1,6 +1,7 @@
 import channel from "./image/img-channel.jpg"
 import dots from "./image/dots.png"
 import Image from "next/image";
+import imageVideo from "./image/image-video.jpg"
 
 export default async function Home() {
 
@@ -13,7 +14,7 @@ export default async function Home() {
       {videos.map((item) => {
         return(
           <div key={item.authorId} className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500 sm:p-0">
-            <Image alt="img-video" src={item.videoThumbnails[2].url} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg" />
+            <Image alt="img-video" src={imageVideo} width={item.videoThumbnails[2].width} height={item.videoThumbnails[2].height} className="rounded-lg" />
             <div className="flex justify-between text-sm mt-2 sm:w-11/12 sm:mx-auto sm:mb-8">
               <div className="flex">
                 <Image alt="img-channel" src={channel} className="rounded-full w-10 h-10"/>

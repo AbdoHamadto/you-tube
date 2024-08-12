@@ -9,6 +9,8 @@ import clip from "./image/scissors.png"
 import dots from "./image/dots.png"
 import dotsy from "./image/dotsy.png"
 import Link from "next/link";
+import image from "./image/image.jpg"
+import imageVideo from "./image/image- video.jpg"
 
 const Watch = async ({ params }) => {
   const res = await fetch('https://invidious.protokolla.fi/api/v1/popular?hl=en')
@@ -36,7 +38,7 @@ const Watch = async ({ params }) => {
     <>
       <div className="w-11/12 mx-auto my-10 flex sm:block sm:mx-0 sm:my-5 sm:w-full">
         <div className="mr-6 sm:mr-0">
-          <Image className="rounded-xl sm:rounded-none" alt="video" src={video[0].videoThumbnails[0].url} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
+          <Image className="rounded-xl sm:rounded-none" alt="video" src={imageVideo} width={video[0].videoThumbnails[0].width} height={video[0].videoThumbnails[0].height}/>
           <p className="text-white my-2 font-bold text-2xl sm:text-lg sm:mx-2">{video[0].title}</p>
           <div className="flex justify-between sm:block sm:mx-2">
             <div className="flex items-center justify-between">
@@ -97,7 +99,7 @@ const Watch = async ({ params }) => {
             return(
               <Link key={item.authorId} href={`/watch/watch=${item.authorId}`}>
                 <div className="p-2 cursor-pointer rounded-lg hover:bg-opacity-30 hover:bg-blue-500 flex sm:p-0 sm:block">
-                  <Image alt="img-video" src={item.videoThumbnails[3].url} width={item.videoThumbnails[5].width} height={item.videoThumbnails[5].height} className="rounded-lg sm:rounded-none sm:w-full" />
+                  <Image alt="img-video" src={image} width={item.videoThumbnails[5].width} height={item.videoThumbnails[5].height} className="rounded-lg sm:rounded-none sm:w-full" />
                   <div className="flex justify-between text-sm mt-2 sm:mx-2 sm:mb-6">
                     <div className="flex">
                       <Image src={channel}  className="hidden sm:block w-10 h-10 rounded-full"/>
